@@ -159,7 +159,7 @@ module ActionController
       end
 
       def is_mobile_device?
-        !is_tablet_device? && !!mobile_device
+        is_tablet_device? || !!mobile_device
       end
 
       def mobile_device
