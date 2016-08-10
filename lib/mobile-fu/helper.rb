@@ -24,6 +24,8 @@ module MobileFu
         end
       end
 
+      return stylesheet_link_tag_without_mobilization(*sources) unless respond_to?(:mobile_device)
+
       device_names = mobile_device.respond_to?(:downcase) && respond_to?(:is_mobile_device?) && is_mobile_device? ? ['mobile', mobile_device.downcase] : []
 
       sources.each do |source|
